@@ -29,9 +29,9 @@ downloads = {
     '/usr/local/bin/docker-compose': {
         'url': 'https://github.com/docker/compose/releases/download/' \
                '{}/docker-compose-Linux-x86_64'.format(
-            config.get('compose', {}).get('version', '1.22.0')),
+            config.get('compose', {}).get('version', '1.25.4')),
         'sha256': config.get('compose', {}).get('checksum',
-                                                'f679a24b93f291c3bffaff340467494f388c0c251649d640e661d509db9d57e9'),
+                                                '542e93b1d5106d2769b325f60ba9a0ba087bb96e30dc2c1cb026f0cb642e9aed'),
     },
 }
 

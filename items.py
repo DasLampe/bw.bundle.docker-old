@@ -48,6 +48,9 @@ downloads = {
         'sha256': config.get('compose', {}).get('checksum',
                                                 '07a5e4104ac6495603454ada9c053a79ac554f65df3ffc28e833b571f6c3e6d1'),
         'mode': '0755',
+        'needs': [
+            'bundle:apt',
+        ],
     },
 }
 
@@ -56,6 +59,9 @@ actions = {
     'install_gpg': {
         'command': 'curl -fsSL https://download.docker.com/linux/{os}/gpg | apt-key add -'.format(os=node.os),
         'unless': 'apt-key list | grep "Docker Release (CE deb) <docker@docker.com>"',
+        'needs': [
+            'bundle:apt',
+        ],
     },
     'apt_update': {
         'command': 'apt-get update',
